@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semantic Similarity</title>
+</head>
+<body>
+    <h1>Semantic Text Similarity</h1>
+    <form method="post" action="/predict_form">
+        <label for="text1">Text 1:</label><br>
+        <textarea name="text1" rows="4" cols="60">{{ text1 or '' }}</textarea><br><br>
+
+        <label for="text2">Text 2:</label><br>
+        <textarea name="text2" rows="4" cols="60">{{ text2 or '' }}</textarea><br><br>
+
+        <input type="submit" value="Compute Similarity">
+    </form>
+
+    {% if score is not none %}
+        <h2>Similarity Score: {{ score }}</h2>
+    {% endif %}
+</body>
+</html>
